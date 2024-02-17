@@ -1,10 +1,11 @@
 import os    
+import sys
 
 if __name__ == "__main__":
-    current_directory = os.getcwd()
-    list_of_directories = os.listdir(current_directory)
+    target_dir = str(sys.argv[1])
+    list_of_directories = os.listdir(target_dir)
     for directory in list_of_directories:
-        path = os.path.join(current_directory, directory)
+        path = os.path.join(target_dir, directory)
         if os.path.isdir(path):
             # get the size of the directory
             size = os.path.getsize(path)
