@@ -20,9 +20,15 @@ if __name__ == "__main__":
         path = os.path.join(target_dir, directory)
         if os.path.isdir(path):
             # get the size of the directory
-            size = get_size(path)
-            print(f"Directory: {path} - Size: {size} bytes")
+            try:
+                size = get_size(path)
+                print(f"Directory: {path} - Size: {size} bytes")
+            except PermissionError:
+                print(f"Permission denied: {path}")
         else:
             # get the size of the file
-            size = os.path.getsize(path)
-            print(f"File: {path} - Size: {size} bytes")
+            try:
+                size = os.path.getsize(path)
+                print(f"File: {path} - Size: {size} bytes")
+            except PermissionError:
+                print(f"Permission denied: {path}")
