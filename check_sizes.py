@@ -17,6 +17,7 @@ if __name__ == "__main__":
     target_dir = str(sys.argv[1])
     list_of_directories = os.listdir(target_dir)
     for directory in list_of_directories:
+        print(f"Checking {directory}")
         if directory == "soe":
             continue
         path = os.path.join(target_dir, directory)
