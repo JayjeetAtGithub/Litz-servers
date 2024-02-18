@@ -25,6 +25,8 @@ if __name__ == "__main__":
                 print(f"Directory: {path} - Size: {size} bytes")
             except PermissionError:
                 print(f"Permission denied: {path}")
+            except FileNotFoundError:
+                print(f"File not found: {path}")
         else:
             # get the size of the file
             try:
@@ -32,3 +34,5 @@ if __name__ == "__main__":
                 print(f"File: {path} - Size: {size} bytes")
             except PermissionError:
                 print(f"Permission denied: {path}")
+            except FileNotFoundError:
+                print(f"File not found: {path}")
