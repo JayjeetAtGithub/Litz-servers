@@ -20,6 +20,8 @@ if __name__ == "__main__":
         print(f"Checking {directory}")
         if directory == "soe":
             continue
+        if directory == "mnt":
+            continue
         path = os.path.join(target_dir, directory)
         if os.path.isdir(path):
             # get the size of the directory
